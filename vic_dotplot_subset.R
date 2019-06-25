@@ -1,4 +1,4 @@
-setwd("C:/Users/cjfrancois/OneDrive - LA TROBE UNIVERSITY/myLTU/Misc Scripts/Weather Dataset")
+setwd("C:/Users/path/to/df")
 
 library(tidyverse)
 library(ggplot2)
@@ -8,7 +8,7 @@ library(ggplot2)
 vic <- read.csv("weather_extra.csv") %>% filter(State == "VIC")
 
 
-#### Generate some summary statistics ####
+#### Generate some summary statistics for the dotplot ####
 
 df2 <- vic %>% 
   group_by(Year, Location) %>% 
@@ -60,4 +60,4 @@ ggplot(data = df2,
         strip.background = element_rect(colour = "#333333", fill = "#E8E8E8"))
 
 # save the graph
-ggsave("vic_subset_dotplot.jpg", height = 7, width = 12)
+ggsave("vic_subset_dotplot.png", height = 7, width = 12)
